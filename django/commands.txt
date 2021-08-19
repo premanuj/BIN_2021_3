@@ -1,0 +1,24 @@
+# environment manager
+pip install pipenv
+
+# Create virtual environment
+pipenv --python version
+
+# Active virtual environment
+pipenv shell
+
+# install packages inside virtual environment
+pipenv install django==version
+
+# Create project
+django-admin startproject project_name 
+
+or 
+
+django-admin startproject project_name .
+
+# open project in vscode
+
+code .
+
+
