@@ -21,4 +21,16 @@ django-admin startproject project_name .
 
 code .
 
+# To migrate models to database
+
+python manage.py makemigration
+
+python manage.py migrate
+
+# to see the generated query
+
+python manage.py sqlmigrate app_name migration_file_name
+
+e.g: python manage.py sqlmigrate product 0001
+
 
