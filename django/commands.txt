@@ -33,4 +33,8 @@ python manage.py sqlmigrate app_name migration_file_name
 
 e.g: python manage.py sqlmigrate product 0001
 
+# create super user
+
+python manage.py createsuperuser
+
 
