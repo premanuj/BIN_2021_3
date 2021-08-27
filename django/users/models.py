@@ -36,7 +36,7 @@ class Role(models.Model):
 class User(AbstractUser):
     role = models.ManyToManyField(Role)
     address = models.CharField(max_length=200, blank=True)
-    email_validator = EmailValidator()
+    # email_validator = EmailValidator()
     # email = models.CharField(
     #     _('email'),
     #     max_length=150,

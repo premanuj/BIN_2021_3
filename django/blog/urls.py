@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 # from product import views
-from users.views import UserResigtrationView
+from users.views import UserResigtrationView, activate_user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', UserResigtrationView.as_view(), name='register')
+    path('', UserResigtrationView.as_view(), name='register'),
+    path('accounts/active/ub64/token', activate_user)
     # path('', views.hello_world, name='profile')
     # path('', views.products, name='products')
 ]
