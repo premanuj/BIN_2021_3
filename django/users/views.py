@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth import tokens
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
 from users.forms import UserRegistrationForm
@@ -56,11 +57,13 @@ def activate_user(request, ub64, token):
     try:
         user = get_object_or_404(User, pk=user_id)
     except Http404:
-        return render(request, 'users/invalid_token.html')
+        return render(request, 'users/invalid_token.html', {'error': "User not exist"})
     else:
         try:
-            activation.check_token(user)
+            print(token)
+            activation.check_token(user, token)
         except Exception:
-            return render(request, 'users/invalid_token.html')
+            return render(request, 'users/invalid_token.html', {'error': "Invalid Token"})
         user.is_active = True
+        user.save()
         return render(request, 'users/activation_success.html', {'user': user})

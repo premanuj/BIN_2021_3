@@ -1,1 +1,10 @@
-{{ greet }}
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+{% block header %}
+    {% include "partials/header.html" %}
+{% endblock header %}
+{% block centerpane %}
+    Welcome to page
+</form>
+{% endblock centerpane %}
+

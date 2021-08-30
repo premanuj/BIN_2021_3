@@ -37,4 +37,7 @@ e.g: python manage.py sqlmigrate product 0001
 
 python manage.py createsuperuser
 
+# insall crispy form 
+
+pipenv install django-crispy-forms==1.12.0
 
